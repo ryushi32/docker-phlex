@@ -1,0 +1,16 @@
+version: "3.1"
+services:
+
+    webserver:
+      image: digitalhigh/phlex
+      container_name: Phlex
+      working_dir: /config
+      volumes:
+          - './config:/config'
+      privileged: true
+      env_file:
+      - '.env'
+      ports:
+       - "5666:5666"
+       - "5667:5667"
+       - "9000:9000"
